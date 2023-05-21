@@ -67,7 +67,7 @@ export default function Sidebar() {
           IconSolid={BeakerIconSolid}
         />
         <SidebarLink
-          text="Google"
+          text="External"
           link="https://www.google.com"
           Icon={BeakerIcon}
         />
