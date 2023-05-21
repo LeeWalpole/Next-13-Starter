@@ -1,7 +1,6 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
-import Sidebar from "../components/Sidebar";
-const inter = Inter({ subsets: ["latin"] });
+import NavLeft from "../components/NavLeft";
+import NavBottom from "../components/NavBottom";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,19 +10,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="mx-auto flex min-h-screen max-w-[1500px] bg-slate-950 text-white ">
-          <aside className="fixed hidden h-full flex-col items-center  space-x-7 bg-yellow-100 tablet:flex tablet:w-[120px] tablet:items-start laptop:w-[120px] desktop:w-[250px] desktop:items-start">
-            <Sidebar />
+      <body className="bg-gradient-to-r from-zinc-950 to-zinc-900">
+        <div className="mx-auto flex min-h-screen max-w-[1500px] text-zinc-300 ">
+          <aside className="fixed hidden h-full flex-col items-center  space-x-7 tablet:flex tablet:w-[120px] tablet:items-start laptop:w-[120px] desktop:w-[250px] desktop:items-start">
+            <NavLeft />
           </aside>
-          <div className="ml-0 flex-grow bg-yellow-500 tablet:ml-[120px] desktop:ml-[250px]">
+          <div className="ml-0 flex-grow tablet:ml-[120px] desktop:ml-[250px]">
             <main className="relative">{children}</main>
           </div>
           {/* <aside className="widgets hidden laptop:flex laptop:min-w-[300px]">
           Widgets
         </aside> */}
         </div>
-        {/* <footer className="">Footer</footer> */}
+        <footer className="fixed bottom-0 left-0 flex h-[66px] w-full flex-row items-center bg-yellow-50 tablet:hidden">
+          <NavBottom />
+        </footer>
       </body>
     </html>
   );

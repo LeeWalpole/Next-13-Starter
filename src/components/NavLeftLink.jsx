@@ -3,14 +3,14 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-export default function SidebarLink({ text, Icon, IconSolid, link }) {
+export default function NavLeftLink({ text, Icon, IconSolid, link }) {
   const pathname = usePathname();
   const isActive = pathname === link || (pathname === "/" && link === "/");
 
   return (
     <Link href={link}>
       <div
-        className={`sidebarLink flex items-center justify-center rounded-full bg-red-100 p-3.5 
+        className={`sidebarLink flex items-center justify-center rounded-full  p-3.5 
         text-xl desktop:justify-start desktop:gap-3.5  ${
           isActive ? "active" : ""
         }`}

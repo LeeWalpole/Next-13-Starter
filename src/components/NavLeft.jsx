@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import SidebarLink from "./SidebarLink";
+import NavLeftLink from "./NavLeftLink";
 import {
   HomeIcon as HomeIconSolid,
   BeakerIcon as BeakerIconSolid,
@@ -28,10 +28,10 @@ import {
   DotsHorizontalIcon as DotsHorizontalIcon,
 } from "@heroicons/react/24/outline";
 
-export default function Sidebar() {
+export default function NavLeft() {
   return (
     <>
-      <div className=" mx-auto flex-col justify-center gap-3.5 bg-slate-50 p-3.5 text-center align-middle tablet:flex ">
+      <div className=" mx-auto flex-col justify-center gap-3.5 p-3.5 text-center align-middle tablet:flex ">
         <Link href="/" className=" ">
           <img
             src="https://www.flames.agency/wp-content/uploads/flames-agency-icon-large.png"
@@ -42,36 +42,36 @@ export default function Sidebar() {
           />
         </Link>
 
-        <SidebarLink
+        <NavLeftLink
           text="Home"
           link="/"
           Icon={HomeIcon}
           IconSolid={HomeIconSolid}
         />
-        <SidebarLink
+        <NavLeftLink
           text="About"
           link="/about"
           Icon={BeakerIcon}
           IconSolid={BeakerIconSolid}
         />
-        <SidebarLink
+        <NavLeftLink
           text="Discover"
           link="/about"
           Icon={BeakerIcon}
           IconSolid={BeakerIconSolid}
         />
-        <SidebarLink
+        <NavLeftLink
           text="Settings"
           link="/about"
           Icon={BeakerIcon}
           IconSolid={BeakerIconSolid}
         />
-        <SidebarLink
+        <NavLeftLink
           text="External"
           link="https://www.google.com"
           Icon={BeakerIcon}
         />
-        <button className="hidden h-[52px] rounded-full bg-[#1d9bf0] text-lg font-bold text-white shadow-md hover:bg-[#1a8cd8] desktop:block">
+        <button className="hidden h-[52px] rounded-full bg-gradient-to-r from-purple-500 to-pink-500  text-lg font-bold text-white shadow-md hover:bg-[#1a8cd8] desktop:block">
           Tweet
         </button>
       </div>
